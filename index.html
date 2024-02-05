@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propostas dos Partidos na AR (ARVotações)</title>
+    <!-- Add Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0; /* Reset default margin */
+        }
+        #search-form {
+            margin-bottom: 20px;
+        }
+        #twitter-iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+        }
+        .dynamic-link {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+            margin-right: 10px;
+        }
+        .logo {
+            width: 60px;
+            height: auto;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Style the footer as a sticky footer */
+        .footer {
+            background-color: #343a40; /* Dark color for footer background */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Propostas dos Partidos na AR (ARVotações)</h1>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        <span class="dynamic-link" onclick="searchTwitter('PAN')"><img class="logo" src="https://www.pan.com.pt/files/themes/pan_theme/assets/images/PAN_logo.svg" alt="PAN"/></span>
+        <span class="dynamic-link" onclick="searchTwitter('IL')"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Iniciativa_Liberal_logo_1.png" alt="IL"/></span>
+        <span class="dynamic-link" onclick="searchTwitter('CH')"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Logo_Chega%21.png/1920px-Logo_Chega%21.png" alt="CH"/></span>
+        <span class="dynamic-link" onclick="searchTwitter('PCP')"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Portuguese_Communist_Party_logo.svg/2560px-Portuguese_Communist_Party_logo.svg.png" alt="PCP"/></span>
+        <span class="dynamic-link" onclick="searchTwitter('PS')"><img class="logo" src="https://ps.pt/wp-content/uploads/2021/07/ps-logo-cor.svg" alt="PS"/></span>
+        <span class="dynamic-link" onclick="searchTwitter('PSD')"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Partido_Social_Democrata_Logo.svg/2560px-Partido_Social_Democrata_Logo.svg.png" alt="PSD"/></span>
+        <span class="dynamic-link" onclick="searchTwitter('BE')"><img class="logo" src="https://www.bloco.org/images/site/logo.jpg" alt="BE"/></span>
+        <span class="dynamic-link" onclick="searchTwitter('L')"><img class="logo" src="https://partidolivre.pt/wp-content/uploads/2021/11/Livre-1.png" alt="L"/></span>
+        <!-- Add more dynamic links as needed -->
+
+        <!-- Explanation of how the website works -->
+        <div class="mt-4">
+            <h3>Como funciona:</h3>
+            <p>Clica num dos logos dos partidos para abrir uma nova aba no Twitter/X da ARVotações com a pesquisa das propostas apresentadas por esse partido.</p>
+            <p>Certifique-se de ter sessão iniciada no Twitter/X para aceder às informações completas.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Desenvolvido com ❤️ por Nuno Moura</p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your Custom Script -->
+    <script>
+        function searchTwitter(value) {
+            const twitterSearchUrl = `https://twitter.com/search?q="(${value})%20➡%EF%B8%8F""%20(from%3AArVotacoes)&src=typed_query&f=top`;
+
+            window.open(twitterSearchUrl, "_blank");
+        }
+    </script>
+</body>
+</html>
